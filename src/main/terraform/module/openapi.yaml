@@ -1,0 +1,22 @@
+---
+openapi: 3.0.3
+info:
+  title: iot_waste_management API
+  version: 1.0-SNAPSHOT
+servers:
+- url: http://localhost:8080
+  description: Auto generated value
+- url: http://0.0.0.0:8080
+  description: Auto generated value
+paths:
+  /waste-management/data/speichern:
+    post:
+      tags:
+      - Waste Ressource
+      responses:
+        "200":
+          description: Daten konnten gespeichert werden
+          content:
+            application/json: {}
+        "400":
+          description: Client hat was falsch gemacht
