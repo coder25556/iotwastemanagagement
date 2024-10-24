@@ -5,16 +5,25 @@
     "version" : "1.0-SNAPSHOT"
   },
   "servers" : [ {
-    "url" : "http://localhost:8080",
+    "url" : "http://localhost:8081",
     "description" : "Auto generated value"
   }, {
-    "url" : "http://0.0.0.0:8080",
+    "url" : "http://0.0.0.0:8081",
     "description" : "Auto generated value"
   } ],
   "paths" : {
     "/waste-management/data/speichern" : {
       "post" : {
         "tags" : [ "Waste Ressource" ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/WasteData"
+              }
+            }
+          }
+        },
         "responses" : {
           "200" : {
             "description" : "Daten konnten gespeichert werden",
@@ -24,6 +33,30 @@
           },
           "400" : {
             "description" : "Client hat was falsch gemacht"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "WasteData" : {
+        "type" : "object",
+        "properties" : {
+          "timestamp" : {
+            "type" : "string"
+          },
+          "ersterBehaelter" : {
+            "type" : "string"
+          },
+          "zweiterBehaelter" : {
+            "type" : "string"
+          },
+          "dritterBehealter" : {
+            "type" : "string"
+          },
+          "akkustand" : {
+            "type" : "string"
           }
         }
       }
